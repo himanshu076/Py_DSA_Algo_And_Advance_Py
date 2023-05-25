@@ -112,7 +112,7 @@ print(count_elements_recursion(li))'''
 '''Q5. Given two numbers, write a Python code to find the Maximum of these two numbers.
 '''
 # Solution:
-def max_of_two_num(a, b):
+'''def max_of_two_num(a, b):
     return a if a >= b else b
 print(max_of_two_num(4,8))
 
@@ -132,12 +132,267 @@ print(x[-1])
 
 from functools import reduce
 maximum4 = reduce(lambda x, y: x if x > y else y, [a, b])
-print(maximum4)
+print(maximum4)'''
 
 
 # **********************************************************************************************************
 
-'''Q6. 
+'''Q6. Python | Ways to check if element exists in list
+'''
+# Solution:
+'''list = test_list = [1, 6, 3, 0, 5, 3, 4]
+def elem_exists_or_not(array: list, elem):
+    if elem in array:
+        return True
+    else:
+        return False
+print(elem_exists_or_not(list, 3))
+
+def elem_exists_or_not2(array: list, elem):
+    # if elem in array:
+    #     return True
+    # else:
+    #     return False
+    s = 0
+    for e in array:
+        if e == elem:
+            s += 1
+    if s > 0:
+        return True
+    else:
+        return False
+print(elem_exists_or_not2(list, 3))
+
+if 4 in list:
+    print(True)
+
+result = any(el==3 for el in list)
+print(result)
+
+test = list.count(4)
+if test > 0:
+    print(True)
+else:
+    print(False)
+
+from collections import Counter
+f = Counter(test_list)
+print(f[3]>0)
+
+try:
+    list.index(4)
+    print(True)
+except ValueError:
+    print(False)
+
+def check_element_exists_set(lst, target):
+  return target in set(lst)
+check_element_exists_set(list, 4)'''
+
+# **********************************************************************************************************
+
+'''Q7. Different ways to clear a list in Python
+'''
+# Solution:
+'''GEEK = [6, 0, 4, 1, 5, 4, 6, 7, 8, 9, 2, 0]
+GEEK.clear()
+print(GEEK)
+
+ls = [6, 0, 4, 1, 5, 4, 6, 7, 8, 9, 2, 0]
+print(ls)
+ls = []
+print(ls)
+
+ff = [6, 0, 4, 1, 5, 4, 6, 7, 8, 9, 2, 0]
+del ff[:]
+print(ff)
+
+tt = [6, 0, 4, 1, 5, 4, 6, 7, 8, 9, 2, 0]
+while len(tt) != 0:
+    tt.pop()
+print(tt)
+
+lst = GEEK[:0]
+print(lst)'''
+
+
+# **********************************************************************************************************
+
+'''Q8. Reversing a List in Python
+'''
+# Solution:
+'''list = [4, 5, 6, 7, 8, 9, 3, 1, 2]
+l1 = [4, 5, 6, 7, 8, 9]
+l1.reverse()
+# print(l1)
+
+s = []
+for i in list:
+    s.insert(0, i)
+# print(s)
+
+r = [4, 5, 6, 7, 8, 9]
+s = r[::-1]
+# print(s)
+    
+def reverse_list(lst):
+    left = 0
+    right = len(lst)-1
+
+    while left < right:
+        lst[left], lst[right] = lst[right], lst[left]
+        left += 1
+        print(left)
+        right -= 1
+        print(right)
+    return lst
+# print(reverse_list(list))
+
+new_list = [list[len(list)-i] for i in range(1, len(list)+1)]
+# print(new_list)
+
+new = [list[i] for i in range(len(list)-1, -1, -1)]
+# print(new)
+
+import numpy as np
+arr = np.array(list)
+reversed = arr[::-1].tolist()
+print(reversed)'''
+# **********************************************************************************************************
+
+'''Q8. Python | Cloning or Copying a list
+'''
+# Solution:
+list = [4, 8, 2, 10, 15, 18]
+def cloning(lst):
+    li = list[:]
+    return li
+# print(cloning(list))
+
+def cloning1(lst):
+    l1 = []
+    l1.extend(lst)
+    return l1
+# print(cloning1(list))
+
+def cloning(lst):
+    li = lst
+    return li
+# print(cloning(list))
+
+import copy
+l2 = copy.copy(list)
+# print(l2)
+
+def cloning3(lst):
+    li = [i for i in list]
+    return li
+# print(cloning3(list))
+
+def cloning4(lst):
+    li = []
+    for item in list: li.append(item)
+    return li
+# print(cloning4(list))
+
+lst1 = copy.deepcopy(list)
+# print(lst1)
+
+lst2 = map(int, list)
+# print([*lst2])
+
+from collections import deque
+lst3 = [(deque(list))]
+# print(lst3)
+
+
+
+# **********************************************************************************************************
+
+'''Q9. 
 '''
 # Solution:
 
+# **********************************************************************************************************
+
+'''Q10. 
+'''
+# Solution:
+
+# **********************************************************************************************************
+
+'''Q11. 
+'''
+# Solution:
+
+# **********************************************************************************************************
+
+'''Q12. 
+'''
+# Solution:
+
+# **********************************************************************************************************
+
+'''Q13. 
+'''
+# Solution:
+
+# **********************************************************************************************************
+
+'''Q14. 
+'''
+# Solution:
+
+# **********************************************************************************************************
+
+'''Q15. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
+'''Q6. 
+'''
+# Solution:
