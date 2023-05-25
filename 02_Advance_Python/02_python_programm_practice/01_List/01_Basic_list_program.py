@@ -263,7 +263,7 @@ print(reversed)'''
 '''Q8. Python | Cloning or Copying a list
 '''
 # Solution:
-list = [4, 8, 2, 10, 15, 18]
+'''list = [4, 8, 2, 10, 15, 18]
 def cloning(lst):
     li = list[:]
     return li
@@ -303,34 +303,154 @@ lst2 = map(int, list)
 
 from collections import deque
 lst3 = [(deque(list))]
-# print(lst3)
-
-
+# print(lst3)'''
 
 # **********************************************************************************************************
 
-'''Q9. 
+'''Q9. Python | Count occurrences of an element in a list.
 '''
 # Solution:
+'''lst = [8, 6, 8, 10, 8, 20, 10, 8, 8]
+from collections import Counter
+s = Counter(lst)
+# print(s)
+
+def count(lst, x):
+    count = 0
+    for i in lst:
+        if i == x:
+            count += 1
+    return count
+# print(count(lst, 10))
+
+def count1(lst, x):
+    return lst.count(x)
+# print(count1(lst, 10))
+
+import operator as op
+s = op.countOf(lst, 10)
+# print(s)
+
+occurrence = {i: lst.count(i) for i in lst}
+# occurrence = {i: count(lst, i) for i in lst}
+# print(occurrence)
+
+import pandas as pd
+coun = pd.Series(lst).value_counts()
+# print(coun)
+
+ele = 8
+x = [i for i in lst if i == ele]
+print(len(x))'''
 
 # **********************************************************************************************************
 
-'''Q10. 
+'''Q10. Find sum and average of List in Python.
 '''
 # Solution:
+'''L = [4, 5, 1, 2, 9, 7, 10, 8]
+c = 0
+for i in L:
+    c += i
+ave = c/len(L)
+# print(c, ave)
+
+sum1 = sum(L)
+avg1 = sum1/len(L)
+# print(sum1, avg1)
+
+import statistics
+sum2 = sum(L)
+avg2 = statistics.mean(L)
+# print(sum2, avg2)
+
+import numpy as np
+sum3 = np.sum(L)
+avg3 = np.average(L)
+# print(sum3, avg3)
+
+def sum_avg(list):
+    sum = 0
+    count = 0
+    for i in list:
+        sum += i
+        count += 1
+    avg = sum/count
+    return sum, avg
+# print(sum_avg(L))
+
+from functools import reduce
+count4 = reduce(lambda x,y: x+y, L)
+avg4 = count4/len(L)
+# print(count4, avg4)'''
 
 # **********************************************************************************************************
 
-'''Q11. 
+'''Q11. Python | Sum of number digits in List
 '''
 # Solution:
+'''test_list = [12, 67, 98, 34]
+res = []
+for i in test_list:
+    sum = 0
+    for d in str(i):
+        sum += int(d)
+    res. append(sum)
+# print(res)
+
+# res1 = list(map(lambda ele: sum(int(sub) for sub in str(ele)), test_list))
+# print(str(res1))
+
+from functools import reduce
+res4 = [reduce(lambda x, y: int(x) + int(y), list(str(i))) for i in test_list]
+# print(res4)
+
+def digit_sum(num):
+    digit_sum = 0
+    while num > 0:
+        digit_sum += num % 10
+        num //=10
+    return digit_sum
+def sum_digit(lst):
+    return list(map(digit_sum, lst))
+# print(sum_digit(test_list))
+
+res5 = [sum(int(s) for s in str(num1)) for num1 in test_list]
+# print(res5)'''
 
 # **********************************************************************************************************
 
-'''Q12. 
+'''Q12. Python | Multiply all numbers in the list
 '''
 # Solution:
+list1 = [1, 2, 3]
+s = 1
+for i in list1:
+    s *= i
+# print(s)
 
+import numpy as np
+res1 = np.prod(list1)
+# print(res1)
+
+from functools import reduce
+r = reduce(lambda x, y: x*y, list1)
+# print(r)
+
+import math
+res4 = math.prod(list1)
+# print(res4)
+
+def product_list(nums):
+    if not nums:
+        return 1
+    return nums[0] * product_list(nums[1:])
+# print(product_list(list1))
+
+from functools import reduce
+from operator import mul
+res6 = reduce(mul, list1)
+    
 # **********************************************************************************************************
 
 '''Q13. 
