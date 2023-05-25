@@ -423,7 +423,7 @@ res5 = [sum(int(s) for s in str(num1)) for num1 in test_list]
 '''Q12. Python | Multiply all numbers in the list
 '''
 # Solution:
-list1 = [1, 2, 3]
+'''list1 = [1, 2, 3]
 s = 1
 for i in list1:
     s *= i
@@ -449,64 +449,287 @@ def product_list(nums):
 
 from functools import reduce
 from operator import mul
-res6 = reduce(mul, list1)
+res6 = reduce(mul, list1)'''
     
 # **********************************************************************************************************
 
-'''Q13. 
+'''Q13. Python program to find smallest number in a list.
+'''
+# Solution:
+'''list2 = [20, 10, 20, 1, 100]
+s = min(list2)
+# print(s)
+
+k = max(list2)
+for i in list2:
+    if i < k:
+        k = i
+# print(k)
+
+list2.sort()
+# print(list2[0])
+
+# sorting the list
+list2.sort(reverse=True)
+# print(list2[-1])
+
+from functools import reduce
+lst = [20, 10, 20, 15, 100]
+# print(reduce(min,lst) )
+
+import numpy as np
+minimum = np.min(list2)
+# print(minimum)
+
+set_arr = set(list2)
+print(min(set_arr))'''
+
+# **********************************************************************************************************
+
+'''Q14. Python program to find second largest number in a list
+'''
+# Solution:
+# list2 = [70, 11, 20, 4, 100]
+# list2.sort()
+# # print(list2[-2])
+
+# maxx = max(list2[0],list2[1])
+# secondMax = min(list2[0],list2[1])
+# n = len(list2)
+# for i in range(n):
+#     if list2[i] > maxx:
+#         secondMax = maxx
+#         maxx = list2[i]
+#     elif list2[i] > secondMax and max != list2[i]:
+#         secondMax = list2[i]
+# # print(secondMax)
+
+# new_list = set(list2)
+# new_list.remove(max(new_list))
+# # print(max(new_list))
+
+# # print(sorted(list2)[-2])
+
+# def findLargest(arr):
+#     secondLargest = 0
+#     largest = min(arr)
+#     for i in range(len(arr)):
+#         if arr[i] > largest:
+#             secondLargest = largest
+#             largest = arr[i]
+#         else:
+#             secondLargest = max(secondLargest, arr[i])
+#     return secondLargest
+# # print(findLargest(list2))
+
+# **********************************************************************************************************
+
+'''Q15. Python program to print even numbers in a list
+'''
+# Solution:
+'''list2 = [12, 14, 95, 3]
+even = []
+for i in list2:
+    if i%2 == 0:
+        even.append(i)
+# print(even)
+
+even2 = [i for i in list2 if i%2 == 0]
+# print(even2)
+
+ven_nos = list(filter(lambda x: (x % 2 == 0), list2))
+# print(ven_nos)
+
+def evennumbers(list, n=0):
+    if n == len(list):
+        exit()
+    if list[n] % 2 == 0:
+        print(list[n], end=" ")
+    evennumbers(list, n+1)
+# print(evennumbers(list2))
+
+# for element in [39,28,19,45,33,74,56]:
+#   if not element&1:  #condition to check even or not
+#     print(element,end=' ')
+
+for element in [39,28,19,45,33,74,56]:
+  if element|1 != element:  #condition to check even or not
+    print(element,end=' ')'''
+
+# **********************************************************************************************************
+
+'''Q16. Python program to print all even numbers in a range.
+'''
+# Solution:
+'''start = 3
+end = 26
+def even_in_range(start, end):
+    for i in range(start, end+1):
+        if i%2 == 0:
+            print(i, end=' ')
+# even_in_range(start, end)
+
+def even1(start, end):
+    start = start+1 if start&1 else start
+    for even_numbers in range(start,end+1,2):
+        print(even_numbers,end=' ')
+even1(start, end)
+'''
+
+# **********************************************************************************************************
+
+'''Q17. Python program to print all odd numbers in a range
+'''
+# Solution:
+'''start = 3
+end = 26
+def odd_in_range(start, end):
+    for i in range(start, end+1):
+        if i%2 != 0:
+            print(i, end=' ')
+# odd_in_range(start, end)
+
+def odd1(start, end):
+    start = start+1 if not start&1 else start
+    for even_numbers in range(start,end+1,2):
+        print(even_numbers,end=' ')
+# odd1(start, end)'''
+
+# **********************************************************************************************************
+
+'''Q18. Python program to count Even and Odd numbers in a List
+'''
+# Solution:
+'''list1 = [2, 7, 5, 64, 14]
+def odd_in_range(ls):
+    even = 0
+    odd = 0
+    for i in ls:
+        if i%2 != 0:
+            odd += 1
+        else:
+            even += 1
+    print(even, odd)
+odd_in_range(list1)
+
+even_count, odd_count = 0, 0
+for num in list1:
+    if not num & 1:
+        even_count += 1
+    else:
+        odd_count += 1
+print(even_count, odd_count)'''
+# **********************************************************************************************************
+
+'''Q19. Python program to print positive numbers in a list
+'''
+# Solution:
+'''list1 = [12, -7, 5, 64, -14]
+for i in list1:
+    if i >= 0:
+        print(i, end=' ')
+
+pos_nos = [num for num in list1 if num >= 0]
+print(pos_nos)'''
+# **********************************************************************************************************
+
+'''Q20. Python program to print negative numbers in a list
+'''
+# Solution:
+'''list1 = [12, -7, 5, 64, -14]
+for i in list1:
+    if i < 0:
+        print(i, end=' ')
+
+pos_nos = [num for num in list1 if num < 0]
+print(pos_nos)'''
+
+# **********************************************************************************************************
+
+'''Q21. Python program to print all positive numbers in a range
+'''
+# Solution:
+'''start, end = -4, 19
+for num in range(start, end + 1):
+    if num >= 0:
+        print(num, end=" ")'''
+
+# **********************************************************************************************************
+
+'''Q22. Python program to print all negative numbers in a range
+'''
+# Solution:
+'''start, end = -4, 19
+for num in range(start, end + 1):
+    if num < 0:
+        print(num, end=" ")'''
+
+# **********************************************************************************************************
+
+'''Q23. Python program to count positive and negative numbers in a list
+'''
+# Solution:
+# list1 = [2, -7, 5, -64, -14]
+# positive, negative = 0, 0
+# for num in list1:
+#     if num >= 0:
+#         positive += 1
+#     else:
+#         negative +=1
+# print('positive: ', positive)
+# print('negative: ', negative)
+
+# only_pos = [num for num in list1 if num >= 1]
+# pos_count = len(only_pos)
+# print('positive: ', pos_count)
+# print('negative: ', len(list1)-pos_count)
+
+# **********************************************************************************************************
+
+'''Q24. Remove multiple elements from a list in Python
+'''
+# # Solution:
+# Input= [12, 15, 3, 10]
+# for i in Input:
+#     s = i-(1/2)
+
+list1 = [11, 5, 17, 15, 18, 23, 50]
+ 
+# Iterate each element in list
+# and add them in variable total
+for ele in list1:
+    if ele % 2 == 0:
+        list1.remove(ele)
+print(list1)
+
+list1 = [ elem for elem in list1 if elem % 2 != 0]
+print(list1)
+# **********************************************************************************************************
+
+'''Q25. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q14. 
+'''Q6. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q15. 
-'''
-# Solution:
 '''Q6. 
 '''
 # Solution:
+
+# **********************************************************************************************************
+
 '''Q6. 
 '''
 # Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
+
+# **********************************************************************************************************
+
 '''Q6. 
 '''
 # Solution:
