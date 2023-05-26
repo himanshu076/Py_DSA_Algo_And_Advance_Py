@@ -669,27 +669,27 @@ for num in range(start, end + 1):
 '''Q23. Python program to count positive and negative numbers in a list
 '''
 # Solution:
-# list1 = [2, -7, 5, -64, -14]
-# positive, negative = 0, 0
-# for num in list1:
-#     if num >= 0:
-#         positive += 1
-#     else:
-#         negative +=1
-# print('positive: ', positive)
-# print('negative: ', negative)
+'''list1 = [2, -7, 5, -64, -14]
+positive, negative = 0, 0
+for num in list1:
+    if num >= 0:
+        positive += 1
+    else:
+        negative +=1
+print('positive: ', positive)
+print('negative: ', negative)
 
-# only_pos = [num for num in list1 if num >= 1]
-# pos_count = len(only_pos)
-# print('positive: ', pos_count)
-# print('negative: ', len(list1)-pos_count)
+only_pos = [num for num in list1 if num >= 1]
+pos_count = len(only_pos)
+print('positive: ', pos_count)
+print('negative: ', len(list1)-pos_count)'''
 
 # **********************************************************************************************************
 
 '''Q24. Remove multiple elements from a list in Python
 '''
 # # Solution:
-# Input= [12, 15, 3, 10]
+'''# Input= [12, 15, 3, 10]
 # for i in Input:
 #     s = i-(1/2)
 
@@ -703,39 +703,116 @@ for ele in list1:
 print(list1)
 
 list1 = [ elem for elem in list1 if elem % 2 != 0]
-print(list1)
+print(list1)'''
 # **********************************************************************************************************
 
-'''Q25. 
+'''Q25. Python | Remove empty tuples from a list
+'''
+# Solution:
+'''tuples = [(), ('ram','15','8'), (), ('laxman', 'sita'),
+          ('krishna', 'akbar', '45'), ('',''),()]
+def remove(tuples):
+    tuples = [t for t in tuples if t]
+    return tuples
+# print(remove(tuples))
+
+def Remove(tuples):
+    tuples = filter(None, tuples)
+    print(tuples)
+# Remove(tuples)
+
+def r_tup(tuples):
+    for i in tuples:
+        if len(i) == 0:
+            tuples.remove(i)
+    return tuples
+# print(r_tup(tuples))
+
+def r_tup2(tuples):
+    for i in tuples:
+        if len(i) == ():
+            tuples.remove(i)
+    return tuples
+# print(r_tup2(tuples))
+
+tup = list(filter(lambda x: len(x)>0, tuples))
+# print(tup)
+
+def remove_empty_tuples(start,oldlist,newlist):
+  if start==len(oldlist):  #base condition
+    return newlist
+  if oldlist[start]==():  #checking the element is empty tuple or not
+    pass
+  else:
+    newlist.append(oldlist[start])   #appending non empty tuple element to newlist
+  return remove_empty_tuples(start+1,oldlist,newlist) 
+print(remove_empty_tuples(0, tuples, []))'''
+
+# **********************************************************************************************************
+
+'''Q26. Python | Program to print duplicates from a list of integers
+'''
+# Solution:
+'''list1 = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
+# new_list = []
+# for i, e in enumerate(list1):
+#     list1.pop(i)
+#     if e in list1:
+#         new_list.append(e)
+# print(list(set(new_list)))
+
+s = []
+r = []
+for i in list1:
+    if i not in s:
+        s.append(i)
+    else:
+        r.append(i)
+# print(list(set(r)))
+
+from collections import Counter
+d = Counter(list1)
+t = [i for i in d if d[i]>1]
+# print(t)
+
+new = []
+for a in list1:
+    n = list1.count(a)
+    if n > 1:
+        if new.count(a) == 0:  # condition to check
+            new.append(a)
+# print(new)
+
+c = list(set([x for x in list1 if list1.count(x) > 1]))
+print(c)'''
+# **********************************************************************************************************
+
+'''Q27. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q6. 
+'''Q28. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q6. 
+'''Q29. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q6. 
+'''Q30. 
 '''
 # Solution:
 
 # **********************************************************************************************************
 
-'''Q6. 
+'''Q31. 
 '''
 # Solution:
-'''Q6. 
-'''
-# Solution:
-'''Q6. 
-'''
-# Solution:
+
+# **********************************************************************************************************
